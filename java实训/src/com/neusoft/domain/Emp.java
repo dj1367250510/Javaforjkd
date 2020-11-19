@@ -89,7 +89,6 @@ public class Emp {
 
     @Override
     public String toString() {
-        String.format("%-5s"+empno,"%-7d"+ename,"%-7d"+job,"%-5s"+mgr,"%-5s"+sal,"%-5s"+comm,"%-5s"+deptno);
         return "Emp{" +
                 "empno=" + empno +
                 ", ename='" + ename + '\'' +
