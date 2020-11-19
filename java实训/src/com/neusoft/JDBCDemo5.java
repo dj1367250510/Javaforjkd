@@ -1,5 +1,7 @@
 package com.neusoft;
 
+import com.neusoft.domain.Emp;
+
 import java.sql.*;
 
 public class JDBCDemo5 {
@@ -16,18 +18,29 @@ public class JDBCDemo5 {
 //6、执行sql
         ResultSet rs = stmt.executeQuery(sql);
 //7、处理结果
-        while(rs.next()){
-            int EMPNO = rs.getInt("EMPNO");
-            String ENAME = rs.getString("ENAME");
-            String JOB = rs.getString("JOB");
-            int MGR = rs.getInt("MGR");
-            Date HIREDATE = rs.getDate("HIREDATE");
-            int SAL = rs.getInt("SAL");
-            int COMM = rs.getInt("COMM");
-            int DEPTNO = rs.getInt("DEPTNO");
-            System.out.println("EMPNO: "+EMPNO+" ENAME: "+ENAME
-                    +" JOB: "+JOB+" MGR: "+MGR+" HIREDATE: "+
-                    HIREDATE+" SAL :"+SAL+" COMM :"+COMM+" DEPTNO :"+DEPTNO);
+//        while(rs.next()){
+//            int EMPNO = rs.getInt("EMPNO");
+//            String ENAME = rs.getString("ENAME");
+//            String JOB = rs.getString("JOB");
+//            int MGR = rs.getInt("MGR");
+//            Date HIREDATE = rs.getDate("HIREDATE");
+//            int SAL = rs.getInt("SAL");
+//            int COMM = rs.getInt("COMM");
+//            int DEPTNO = rs.getInt("DEPTNO");
+////            System.out.println("EMPNO: "+EMPNO+" ENAME: "+ENAME
+////                    +" JOB: "+JOB+" MGR: "+MGR+" HIREDATE: "+
+////                    HIREDATE+" SAL :"+SAL+" COMM :"+COMM+" DEPTNO :"+DEPTNO);
+            while(rs.next()){
+            int empno = rs.getInt(1);
+            String ename= rs.getString(2);
+            String job = rs.getString(3);
+            int mgr = rs.getInt(4);
+            Date hiredata = rs.getDate(5);
+            int sal = rs.getInt(6);
+            int comm = rs.getInt(7);
+            int deptno = rs.getInt(8);
+            Emp emp = new Emp(empno,ename,job,mgr,hiredata,sal,comm,deptno);
+            System.out.println(emp);
         }
 //8、释放资源
         stmt.close();
