@@ -132,7 +132,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605680619948</updated>
       <workItem from="1605747899234" duration="1137000" />
-      <workItem from="1605835346251" duration="387000" />
+      <workItem from="1605835346251" duration="2087000" />
     </task>
     <servers />
   </component>
@@ -156,10 +156,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="117" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1605775966968" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605770367940">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605835716856">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605770367940" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605835716856" />
     <state width="1493" height="234" key="GridCell.Tab.0.bottom" timestamp="1605780779455">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -176,6 +176,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="234" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605780779455" />
+    <state x="178" y="22" key="new project wizard" timestamp="1605835720354">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="178" y="22" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1605835720354" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605756169938">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
