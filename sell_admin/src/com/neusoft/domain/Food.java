@@ -1,19 +1,16 @@
 package com.neusoft.domain;
 
-import java.io.File;
-import java.math.BigDecimal;
-
 public class Food {
     private Integer foodId;
     private String foodName;
     private String foodExplain;
-    private BigDecimal foodPrice;
+    private Double foodPrice;
     private Integer businessId;
 
     public Food(){
 
     }
-    public Food(Integer foodId, String foodName, String foodExplain, BigDecimal foodPrice, Integer businessId) {
+    public Food(Integer foodId, String foodName, String foodExplain, Double foodPrice, Integer businessId) {
         this.foodId = foodId;
         this.foodName = foodName;
         this.foodExplain = foodExplain;
@@ -45,11 +42,11 @@ public class Food {
         this.foodExplain = foodExplain;
     }
 
-    public BigDecimal getFoodPrice() {
+    public Double getFoodPrice() {
         return foodPrice;
     }
 
-    public void setFoodPrice(BigDecimal foodPrice) {
+    public void setFoodPrice(Double foodPrice) {
         this.foodPrice = foodPrice;
     }
 
