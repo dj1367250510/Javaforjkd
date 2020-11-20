@@ -28,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -43,15 +43,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/mysql-connector-java-5.1.37-bin.jar" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -67,7 +68,20 @@
       <recent name="E:\dj\Gituhub\Javaforjkd\sell_admin" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ElmAdminEntry">
+    <configuration name="ElmAdminEntry" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.neusoft.ElmAdminEntry" />
+      <module name="sell_admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.neusoft.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.neusoft.Test" />
       <module name="sell_admin" />
@@ -83,6 +97,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ElmAdminEntry" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
@@ -97,7 +112,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605835720780</updated>
-      <workItem from="1605835723413" duration="14377000" />
+      <workItem from="1605835723413" duration="19034000" />
     </task>
     <servers />
   </component>
@@ -120,26 +135,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1605836105210" />
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1605851787580">
+    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605858947831">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1605851787580" />
-    <state width="775" height="171" key="GridCell.Tab.0.bottom" timestamp="1605858397965">
+    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1605858947831" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1605861366079">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="775" height="171" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605858397965" />
-    <state width="775" height="171" key="GridCell.Tab.0.center" timestamp="1605858397965">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1605861366079" />
+    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1605858894753">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="775" height="171" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605858397965" />
-    <state width="775" height="171" key="GridCell.Tab.0.left" timestamp="1605858397964">
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605858894753" />
+    <state width="1309" height="210" key="GridCell.Tab.0.bottom" timestamp="1605859041791">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="775" height="171" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605858397964" />
-    <state width="775" height="171" key="GridCell.Tab.0.right" timestamp="1605858397965">
+    <state width="1309" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605859041791" />
+    <state width="1309" height="210" key="GridCell.Tab.0.center" timestamp="1605859041791">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="775" height="171" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605858397965" />
+    <state width="1309" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605859041791" />
+    <state width="1309" height="210" key="GridCell.Tab.0.left" timestamp="1605859041791">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1309" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605859041791" />
+    <state width="1309" height="210" key="GridCell.Tab.0.right" timestamp="1605859041791">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1309" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605859041791" />
+    <state x="270" y="56" key="SettingsEditor" timestamp="1605860696995">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1605860696995" />
     <state x="783" y="189" key="run.anything.popup" timestamp="1605854787751">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

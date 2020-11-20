@@ -9,6 +9,7 @@ public class Test {
     public static void main(String[] args) {
         BusinessDaoImpl dao = new BusinessDaoImpl();
 
+        //查询所有
 //        List<Business> businessList = dao.listBusiness();
 //        for (Business b : businessList) {
 //            System.out.println(b);
@@ -31,9 +32,9 @@ public class Test {
 //        business.setBusinessId(10012);
 //        dao.updateBusiness(business);
 
-        //查
-        Business business =dao.getBusinessById(10012);
-        System.out.println(business);
+//        //查
+//        Business business =dao.getBusinessById(10012);
+//        System.out.println(business);
 
     }
 

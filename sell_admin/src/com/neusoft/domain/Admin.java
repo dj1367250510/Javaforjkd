@@ -2,12 +2,12 @@ package com.neusoft.domain;
 
 public class Admin {
     private Integer adminId;
-    private Integer adminName;
+    private String adminName;
     private String password;
     public Admin() {
 
     }
-    public Admin(Integer adminId, Integer adminName, String password) {
+    public Admin(Integer adminId, String adminName, String password) {
         this.adminId = adminId;
         this.adminName = adminName;
         this.password = password;
@@ -21,11 +21,11 @@ public class Admin {
         this.adminId = adminId;
     }
 
-    public Integer getAdminName() {
+    public String getAdminName() {
         return adminName;
     }
 
-    public void setAdminName(Integer adminName) {
+    public void setAdminName(String adminName) {
         this.adminName = adminName;
     }
 
