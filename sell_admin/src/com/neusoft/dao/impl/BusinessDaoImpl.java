@@ -3,11 +3,10 @@ package com.neusoft.dao.impl;
 import com.neusoft.dao.BusinessDao;
 import com.neusoft.domain.Business;
 import com.neusoft.untils.JDBCUtils;
-
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,7 +63,6 @@ public class BusinessDaoImpl implements BusinessDao {
             rs = pst.getGeneratedKeys();
             if(rs.next()){
                businessId = rs.getInt(1);
-
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -75,18 +73,74 @@ public class BusinessDaoImpl implements BusinessDao {
     }
 
     @Override
-    public int removeBusiness(String businessName) {
-        return 0;
+    public int removeBusiness(int businessId) {
+        int result = 0;
+        String sql = "delete from business where businessId = ? ";
+        try {
+            conn = JDBCUtils.getConnection();
+            //开启事务
+            conn.setAutoCommit(false);
+            pst = conn.prepareStatement(sql);
+            pst.setInt(1,businessId);
+            result = pst.executeUpdate();
+            conn.commit();
+        }catch (Exception e){
+            result = 0;
+            try{
+                conn.rollback();
+            }catch (SQLException throwables){
+                throwables.printStackTrace();
+            }
+            e.printStackTrace();
+        }finally {
+            JDBCUtils.close(pst,conn);
+        }
+        return result;
     }
 
     @Override
     public int updateBusiness(Business business) {
-        return 0;
+        int result = 0;
+        String sql = "update business set businessName = ? , businessAddress =  ? , businessExplain = ? , starPrice = ? , deliveryPrice = ? where businessId = ? " ;
+        try {
+            conn = JDBCUtils.getConnection();
+            pst = conn.prepareStatement(sql);
+            pst.setString(1,business.getBusinessName());
+            pst.setString(2,business.getBusinessAddress());
+            pst.setString(3,business.getBusinessExplain());
+            pst.setDouble(4,business.getStarPrice());
+            pst.setDouble(5,business.getDeliveryPrice());
+            pst.setInt(6,business.getBusinessId());
+            result = pst.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override
-    public Business getBusinessById() {
-        return null;
+    public Business getBusinessById(Integer businessId) {
+        Business business = null;
+        String sql = "select * from business where businessId = ? ";
+        try {
+            conn = JDBCUtils.getConnection();
+            pst = conn.prepareStatement(sql);
+            pst.setInt(1,businessId);
+            rs = pst.executeQuery();
+            while (rs.next()){
+                business =new Business();
+                business.setBusinessName(rs.getString("businessName"));
+                business.setBusinessAddress(rs.getString("businessAddress"));
+                business.setBusinessExplain(rs.getString("businessExplain"));
+                business.setStarPrice(rs.getDouble("starPrice"));
+                business.setDeliveryPrice(rs.getDouble("deliveryPrice"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            JDBCUtils.close(rs,pst,conn);
+        }
+        return business;
     }
 
 }
