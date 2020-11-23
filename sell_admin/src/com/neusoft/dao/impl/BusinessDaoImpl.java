@@ -16,29 +16,45 @@ public class BusinessDaoImpl implements BusinessDao {
     ResultSet rs = null;
 
     @Override
-    public List<Business> listBusiness() {
+    public List<Business> listBusiness(String businessName,String businessAddress) {
         ArrayList<Business> list = new ArrayList<>();
-        String sql = "select * from business";
+        StringBuffer sql = new StringBuffer("select * from business WHERE 1=1");
+        if (businessName !=null && !businessName.equals("")){
+            sql.append(" and  businessName LIKE '%"+businessName+"%'");
+        }
+        if (businessAddress !=null && !businessAddress.equals("") ){
+            sql.append(" and businessAddress like '%"+businessAddress+"%'");
+        }
+//        System.out.println("sql ="+sql.toString());
+
         try {
             conn = JDBCUtils.getConnection();
-            pst = conn.prepareStatement(sql);
+            pst = conn.prepareStatement(sql.toString());
             rs = pst.executeQuery();
             while (rs.next()) {
                 Business business = new Business();
-                Integer businessId = rs.getInt(1);
-                String password =rs.getString(2);
-                String businessName = rs.getString(3);
-                String businessAddress =rs.getString(4);
-                String businessExplain = rs.getString(5);
-                Double starPrice =rs.getDouble(6);
-                Double deliveryPrice =rs.getDouble(7);
-                business.setBusinessId(businessId);
-                business.setPassword(password);
-                business.setBusinessName(businessName);
-                business.setBusinessAddress(businessAddress);
-                business.setBusinessExplain(businessExplain);
-                business.setStarPrice(starPrice);
-                business.setDeliveryPrice(deliveryPrice);
+//                Integer businessId = rs.getInt(1);
+//                String password =rs.getString(2);
+//                String bsName = rs.getString(3);
+//                String bsAddress =rs.getString(4);
+//                String businessExplain = rs.getString(5);
+//                Double starPrice =rs.getDouble(6);
+//                Double deliveryPrice =rs.getDouble(7);
+//                business.setBusinessId(businessId);
+//                business.setPassword(password);
+//                business.setBusinessName(bsName);
+//                business.setBusinessAddress(bsAddress);
+//                business.setBusinessExplain(businessExplain);
+//                business.setStarPrice(starPrice);
+//                business.setDeliveryPrice(deliveryPrice);
+//                list.add(business);
+                business.setBusinessId(rs.getInt("businessId"));
+                business.setPassword(rs.getString("password"));
+                business.setBusinessName(rs.getString("businessName"));
+                business.setBusinessAddress(rs.getString("businessAddress"));
+                business.setBusinessExplain(rs.getString("businessExplain"));
+                business.setStarPrice(rs.getDouble("starPrice"));
+                business.setDeliveryPrice(rs.getDouble("deliveryPrice"));
                 list.add(business);
             }
 
