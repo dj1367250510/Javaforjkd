@@ -145,6 +145,7 @@ public class BusinessDaoImpl implements BusinessDao {
             rs = pst.executeQuery();
             while (rs.next()){
                 business =new Business();
+                business.setBusinessId(rs.getInt("businessId"));
                 business.setBusinessName(rs.getString("businessName"));
                 business.setBusinessAddress(rs.getString("businessAddress"));
                 business.setBusinessExplain(rs.getString("businessExplain"));
