@@ -60,6 +60,8 @@ public class BusinessDaoImpl implements BusinessDao {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            JDBCUtils.close(rs,pst,conn);
         }
         return list;
     }
@@ -109,7 +111,7 @@ public class BusinessDaoImpl implements BusinessDao {
             }
             e.printStackTrace();
         }finally {
-            JDBCUtils.close(pst,conn);
+            JDBCUtils.close(rs,pst,conn);
         }
         return result;
     }
@@ -130,6 +132,8 @@ public class BusinessDaoImpl implements BusinessDao {
             result = pst.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            JDBCUtils.close(rs,pst,conn);
         }
         return result;
     }

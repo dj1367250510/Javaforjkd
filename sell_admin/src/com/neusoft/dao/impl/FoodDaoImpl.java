@@ -12,7 +12,7 @@ import java.util.List;
 
 public class FoodDaoImpl implements FoodDao {
 
-    private Connection con = null;
+    private Connection conn = null;
     private PreparedStatement pst = null;
     private ResultSet rs = null;
 
@@ -21,8 +21,8 @@ public class FoodDaoImpl implements FoodDao {
         List<Food> list = new ArrayList<>();
         String sql = "select * from food where businessId=?";
         try {
-            con = JDBCUtils.getConnection();
-            pst = con.prepareStatement(sql);
+            conn = JDBCUtils.getConnection();
+            pst = conn.prepareStatement(sql);
             pst.setInt(1, businessId);
             rs = pst.executeQuery();
             while(rs.next()) {
@@ -37,7 +37,7 @@ public class FoodDaoImpl implements FoodDao {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            JDBCUtils.close(rs, pst, con);
+            JDBCUtils.close(rs, pst, conn);
         }
         return list;
     }
@@ -47,8 +47,8 @@ public class FoodDaoImpl implements FoodDao {
         int result = 0;
         String sql = "insert into food values(null,?,?,?,?)";
         try {
-            con = JDBCUtils.getConnection();
-            pst = con.prepareStatement(sql);
+            conn = JDBCUtils.getConnection();
+            pst = conn.prepareStatement(sql);
             pst.setString(1, food.getFoodName());
             pst.setString(2, food.getFoodExplain());
             pst.setDouble(3, food.getFoodPrice());
@@ -57,7 +57,7 @@ public class FoodDaoImpl implements FoodDao {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            JDBCUtils.close(null, pst, con);
+            JDBCUtils.close(rs, pst, conn);
         }
         return result;
     }
@@ -67,8 +67,8 @@ public class FoodDaoImpl implements FoodDao {
         int result = 0;
         String sql = "update food set foodName=?,foodExplain=?,foodPrice=? where foodId=?";
         try {
-            con = JDBCUtils.getConnection();
-            pst = con.prepareStatement(sql);
+            conn = JDBCUtils.getConnection();
+            pst = conn.prepareStatement(sql);
             pst.setString(1, food.getFoodName());
             pst.setString(2, food.getFoodExplain());
             pst.setDouble(3, food.getFoodPrice());
@@ -77,7 +77,7 @@ public class FoodDaoImpl implements FoodDao {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            JDBCUtils.close(null, pst, con);
+            JDBCUtils.close(rs,pst, conn);
         }
         return result;
     }
@@ -87,14 +87,14 @@ public class FoodDaoImpl implements FoodDao {
         int result = 0;
         String sql = "delete from food where foodId=?";
         try {
-            con = JDBCUtils.getConnection();
-            pst = con.prepareStatement(sql);
+            conn = JDBCUtils.getConnection();
+            pst = conn.prepareStatement(sql);
             pst.setInt(1, foodId);
             result = pst.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-           JDBCUtils.close(null, pst, con);
+           JDBCUtils.close( rs,pst, conn);
         }
         return result;
     }
@@ -105,8 +105,8 @@ public class FoodDaoImpl implements FoodDao {
         Food food = null;
         String sql = "select * from food where foodId=?";
         try {
-            con = JDBCUtils.getConnection();
-            pst = con.prepareStatement(sql);
+            conn = JDBCUtils.getConnection();
+            pst = conn.prepareStatement(sql);
             pst.setInt(1, foodId);
             rs = pst.executeQuery();
             while(rs.next()) {
@@ -120,7 +120,7 @@ public class FoodDaoImpl implements FoodDao {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            JDBCUtils.close(rs, pst, con);
+            JDBCUtils.close(rs, pst, conn);
         }
         return food;
     }

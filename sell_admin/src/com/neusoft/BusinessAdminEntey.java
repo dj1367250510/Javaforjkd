@@ -84,7 +84,7 @@ public class BusinessAdminEntey {
                 case 5:
                     break;
                 default:
-                    System.out.println("没哟这个选项");
+                    System.out.println("没有这个选项");
                     break;
 
             }
