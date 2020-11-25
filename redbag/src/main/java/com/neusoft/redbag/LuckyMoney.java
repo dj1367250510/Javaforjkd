@@ -1,6 +1,7 @@
 package com.neusoft.redbag;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +13,7 @@ import java.math.BigDecimal;
  */
 @Entity
 @Data
+@NoArgsConstructor
 public class LuckyMoney {
     //@Entity指定该类是实体类  @Id  代表主键  @GeneratedValue 代表自增长
     @Id
@@ -23,41 +25,5 @@ public class LuckyMoney {
     private String producer;
     //收红包的人
     private String consumer;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public BigDecimal getMoney() {
-        return money;
-    }
-
-    public void setMoney(BigDecimal money) {
-        this.money = money;
-    }
-
-    public String getProducer() {
-        return producer;
-    }
-
-    public void setProducer(String producer) {
-        this.producer = producer;
-    }
-
-    public String getConsumer() {
-        return consumer;
-    }
-
-    public void setConsumer(String consumer) {
-        this.consumer = consumer;
-    }
-
-    public LuckyMoney(){
-    }
-
 
 }
