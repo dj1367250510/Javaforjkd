@@ -1,7 +1,7 @@
 server:
-  port: 8886
+  port: 8889
   servlet:
-    context-path: /user
+    context-path: /redbag
 
 spring:
   datasource:
