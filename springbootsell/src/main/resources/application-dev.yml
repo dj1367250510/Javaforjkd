@@ -1,7 +1,5 @@
 server:
-  port: 8889
-  servlet:
-    context-path: /sell
+  port: 8888
 
 spring:
   datasource:
@@ -15,3 +13,5 @@ spring:
     show-sql: true
   jackson:
     default-property-inclusion: non_null
+  mvc:
+    static-path-pattern: /static/**
