@@ -5,7 +5,6 @@
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">
@@ -18,7 +17,6 @@
         </div>
     </div>
 </div>
-
 </body>
 
 <script>
