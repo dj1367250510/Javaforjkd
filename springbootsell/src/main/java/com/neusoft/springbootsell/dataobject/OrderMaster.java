@@ -2,7 +2,6 @@ package com.neusoft.springbootsell.dataobject;
 
 import com.neusoft.springbootsell.enums.OrderStatusEnum;
 import com.neusoft.springbootsell.enums.PayStatusEnum;
-import javafx.scene.chart.PieChart;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 

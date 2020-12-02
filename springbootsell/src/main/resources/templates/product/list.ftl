@@ -43,7 +43,15 @@
                                     <a href="/seller/product/index?productId=${productInfo.productId}">修改</a>
                                 </td>
                                 <td>
-                                    <a href="#">下架</a>
+
+                                    <#if productInfo.getProductStatus() == 0>
+                                        <a href="/seller/product/OffSale?productId=${productInfo.productId}">下架</a>
+                                    </#if>
+
+                                    <#if productInfo.getProductStatus() == 1>
+                                        <a href="/seller/product/OnSale?productId=${productInfo.productId}">上架</a>
+                                    </#if>
+
                                 </td>
 
                             </tr>

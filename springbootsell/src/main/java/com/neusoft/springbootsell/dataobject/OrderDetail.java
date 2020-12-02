@@ -4,7 +4,6 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.xml.soap.SAAJMetaFactory;
 import java.math.BigDecimal;
 
 /**

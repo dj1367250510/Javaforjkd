@@ -6,12 +6,12 @@ import com.neusoft.springbootsell.dataobject.ProductCategory;
 import java.util.List;
 
 public interface CategoryService {
-    public ProductCategory findOne(Integer categoryId);
+     ProductCategory findOne(Integer categoryId);
 
-    public List<ProductCategory> findAll();
+     List<ProductCategory> findAll();
 
-    public List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryTypeList);
+     List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryTypeList);
 
-    public ProductCategory save(ProductCategory productCategory);
+     ProductCategory save(ProductCategory productCategory);
 
 }

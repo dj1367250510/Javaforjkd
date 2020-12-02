@@ -102,4 +102,30 @@ public class SellerProductController {
         return new ModelAndView("common/success", map);
     }
 
+    //上架
+    @GetMapping("/OnSale")
+    public ModelAndView onSale(@RequestParam("productId")String productId,Map<String,Object> map){
+        try{
+            productService.onSale(productId);
+        }catch (SellException e){
+            map.put("msg",e.getMessage());
+            map.put("url","/seller/product/list");
+            return new ModelAndView("common/error",map);
+        }
+        map.put("url","/seller/product/list");
+        return new ModelAndView("common/success",map);
+    }
+
+    @GetMapping("/OffSale")
+    public ModelAndView offSale(@RequestParam("productId")String productId,Map<String,Object> map){
+        try{
+            productService.offSale(productId);
+        }catch (SellException e){
+            map.put("msg",e.getMessage());
+            map.put("url","/seller/product/list");
+            return new ModelAndView("common/error",map);
+        }
+        map.put("url","/seller/product/list");
+        return new ModelAndView("common/success",map);
+    }
 }
