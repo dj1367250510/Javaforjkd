@@ -37,11 +37,6 @@ public class UserServiceImpl implements UserService {
         if(!Password.equals(result.getPassword())){
             throw new UserException(ResultEnum.USER_PASSWORD_ERROR);
         }
-        User user = new User();
-        String Username = user.getUsername();
-        user.setUsername(Username);
-        user.setOpenid(Openid);
-        user.setPassword(Password);
-        return user;
+        return result;
     }
 }

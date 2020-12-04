@@ -7,7 +7,6 @@ import com.neusoft.springbootsell.services.UserService;
 import com.neusoft.springbootsell.dataobject.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,15 +27,15 @@ public class UserController {
 
     @GetMapping("/login")
     public ModelAndView login(Map<String, Object> map) {
-        return new ModelAndView("user/login");
+        return new ModelAndView("user/login",map);
     }
 
     @GetMapping("/register")
-    public ModelAndView register(Map<String, Object> map) {
-        return new ModelAndView("user/register");
+    public ModelAndView res(Map<String, Object> map) {
+        return new ModelAndView("user/register",map);
     }
 
-    @PostMapping("/register")
+    @PostMapping("/res")
     public ModelAndView res(@Valid UserForm form,
                                  BindingResult bindingResult,
                                  Map<String, Object> map){
@@ -45,14 +44,15 @@ public class UserController {
             map.put("msg", bindingResult.getFieldError().getDefaultMessage());
             map.put("url", "/seller/user/register");
             return new ModelAndView("common/error", map);
-            }
-        if (!form.getFirpassword().equals(form.getSecpassword())){
-            map.put("msg","两次密码不一致");
+        }
+        if(!form.getFirpassword().equals(form.getSecpassword())){
+            map.put("msg","密码不一致");
             map.put("url","/seller/user/register");
             return new ModelAndView("common/error", map);
         }
         User user = new User();
         try{
+            System.out.println(form);
             user.setOpenid(form.getOpenid());
             user.setUsername(form.getUsername());
             user.setPassword(form.getFirpassword());
@@ -62,11 +62,11 @@ public class UserController {
             map.put("url","/seller/user/register");
             return new ModelAndView("common/error", map);
         }
-        map.put("url","/seller/user/register");
+        map.put("url","/seller/user/login");
         return new ModelAndView("common/success", map);
-        }
+    }
 
-    @PostMapping("/login")
+    @PostMapping("/log")
     public ModelAndView login(@Valid UserForm form,
                             BindingResult bindingResult,
                             Map<String, Object> map){
@@ -83,10 +83,10 @@ public class UserController {
             map.put("url","/seller/user/login");
             return new ModelAndView("common/error", map);
         }
-        map.put("url"," ");
+        map.put("url","/seller/product/list");
         return new ModelAndView("common/success", map);
     }
 
-    }
+}
 
 

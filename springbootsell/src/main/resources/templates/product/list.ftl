@@ -4,11 +4,11 @@
 <div id="wrapper" class="toggled">
     <#--    边栏nav-->
     <#include "../common/nav.ftl">
-    <#--     右侧-->
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
             <div class="row clearfix">
                 <div class="col-md-12 column">
+                    <h3>
+                        商品信息列表页
+                    </h3>
                     <table class="table table-bordered table-condensed">
                         <thead>
                         <tr>
@@ -53,13 +53,12 @@
                                     </#if>
 
                                 </td>
-
                             </tr>
                         </#list>
-
                         </tbody>
                     </table>
                 </div>
+
                 <div class="col-md-12 column">
                     <#--                    pull-right 控件靠右-->
                     <ul class="pagination pull-right">

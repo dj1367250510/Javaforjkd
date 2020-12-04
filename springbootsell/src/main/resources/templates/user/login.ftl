@@ -4,7 +4,7 @@
 <div class="container col-md-offset-4 col-lg-offse-4col-xl-offset-4" style=" padding-top: 250px">
     <div class="row clearfix">
         <div class="col-md-12 column" >
-            <form class="form-horizontal" role="form" action="/seller/user/login" method="post">
+            <form class="form-horizontal" role="form" action="/seller/user/log" method="post">
                 <div class="form-group">
                     <label for="inputOpenid" class="col-sm-2 control-label">用户账号</label>
                     <div class="col-sm-10">
@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <label for="inputPassword" class="col-sm-2 control-label">用户密码</label>
                     <div class="col-sm-10">
-                        <input name="password" type="password" />
+                        <input name="firpassword" type="password" />
                     </div>
                 </div>
 

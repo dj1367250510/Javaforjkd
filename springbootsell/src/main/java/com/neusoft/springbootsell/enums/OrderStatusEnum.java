@@ -1,7 +1,6 @@
 package com.neusoft.springbootsell.enums;
 
 import lombok.Getter;
-
 @Getter
 public enum OrderStatusEnum implements CodeEnum{
     NWE(0,"新订单"),
@@ -10,6 +9,10 @@ public enum OrderStatusEnum implements CodeEnum{
     ;
     private Integer code;
     private String message;
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
     OrderStatusEnum(Integer code, String message) {
         this.code = code;
